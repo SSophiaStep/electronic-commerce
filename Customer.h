@@ -17,6 +17,7 @@ public:
     string getName();
     string getAddress();
     string getEmail();
+    friend ostream& operator<<(ostream &os, const Customer& customer);
     Customer();
     Customer(string new_name);
     Customer(string new_name, string new_address);
@@ -25,5 +26,4 @@ public:
 };
 
 #endif
-
-
+//laba1
