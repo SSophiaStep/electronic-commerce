@@ -15,14 +15,16 @@ public:
     void SetPrice(double new_price);
     void SetQuantity(int new_quantity);
     string getItem();
-    double getPrice();
-    int getQuantity();
+    double getPrice() const;
+    int getQuantity() const;
+
     Product();
     Product(string new_item);
     Product(string new_item,double new_price);
     Product(string new_item, double new_price, int new_quantity);
+    Product(const Product& other);
     ~Product();
 };
 
 
-#endif
+#endif//oleg loh

@@ -22,17 +22,19 @@ string Product::getItem() {
     return item;
 }
 
-double Product::getPrice() {
+double Product::getPrice() const {
     return price;
 }
 
-int Product::getQuantity() {
+int Product::getQuantity() const {
     return quantity;
-}
-
-Product::~Product() {
 }
 
 Product::Product(string new_item, double new_price, int new_quantity)
         : item{new_item}, price{new_price}, quantity{new_quantity} {
 }
+Product::Product(const Product& other):item(other.item), price(other.price), quantity(other.quantity){};
+
+Product::~Product() {
+}
+//oleg loh
