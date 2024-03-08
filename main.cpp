@@ -1,52 +1,72 @@
 #include <iostream>
 #include "Customer.h"
 #include "Product.h"
-#include "Purchase.h"
+#include "Store.h"
 
 using namespace std;
+void buyProduct(Product product, Product &laptop){
+    int buyChoice;
+    cout<<"Choose what do you want to purchase :"<<endl;
+    cout<<"1. Book"<<endl;
+    cout<<"2. Laptop"<<endl;
+    cin>>buyChoice;
+    int purchaseAmount;
+    switch (buyChoice) {
+        case(1):{
+            cout<<"How much do you wanna buy?"<<endl;
+            cin>>purchaseAmount;
+            product.SetQuantity(purchaseAmount);
+        }break;
+        case(2):{
+            cout<<"How much do you wanna buy?"<<endl;
+            cin>>purchaseAmount;
+            product.SetQuantity(purchaseAmount);
+        }break;
+        default:{
+            cout<<"Invalid choice, Try again"<<endl;
+        }break;
 
-int main() {
-    int choice;
-
-    do {
-        cout << "1. Display Customer\n";
-        cout << "2. Display Product\n";
-        cout << "3. Display Purchase\n";
-        cout << "0. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-
-        switch(choice) {
-            case 1: {
-                Customer customer("Nastia", "Goncharova Street", "nastianed@gmail.com");
-                cout << "Customer Name: " << customer.getName() << endl;
-                cout << "Customer Email: " << customer.getEmail() << endl;
-                cout << "Customer Address: " << customer.getAddress() << endl;
-                break;
-            }
-            case 2: {
-                Product product("Book", 20.99, 1);
-                cout << "Product Item: " << product.getItem() << endl;
-                cout << "Product Price: " << product.getPrice() << endl;
-                cout << "Product Quantity: " << product.getQuantity() << endl;
-                break;
-            }
-            case 3: {
-                Purchase purchase(41.98, 2);
-                cout << "Purchase Amount: " << purchase.getAmount() << endl;
-                cout << "Product Price: " << purchase.getProductPrice() << endl;
-                break;
-            }
-            case 0: {
-                cout << "Exiting program\n";
-                break;
-            }
-            default: {
-                cout << "Invalid choice. Please try again.\n";
-                break;
-            }
-        }
-    } while(choice != 0);
-
-    return 0;
+    }
+    cout << "Purchase Amount: " << product.getQuantity() << endl;
+    cout << "Product Price: " << product.getPrice()*product.getQuantity() << endl;
 }
+int main() {
+
+    Customer customer("Nastia", "Goncharova Street", "nastianed@gmail.com");
+    Product product("Book", 20.99, 1);
+    Product laptop (product);
+    laptop.SetItem("laptop");
+    Store bazar("Rozetka",{});
+    bazar.setStore(product);
+    bazar.setStore(laptop);
+    //Purchase purchase(1,1);
+
+    int choice;
+    cout << "1. Display Customer\n";
+    cout << "2. Display Product\n";
+    cout << "3. Display Purchase\n";
+    cout << "0. Exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    switch(choice) {
+        case 1: {
+                cout<<customer;
+            break;
+        }
+        case 2: {
+            bazar.showCatalog();
+        }break;
+        case 3: {
+            buyProduct(product, laptop);
+        }break;
+        case 0: {
+            cout << "Exiting program\n";
+            break;
+        }
+        default: {
+            cout << "Invalid choice. Please try again.\n";
+            break;
+        }
+    }
+}//laba3
