@@ -1,29 +1,21 @@
-#ifndef INC_2_COSTUMER_H
-#define INC_2_COSTUMER_H
-
-#include <iostream>
+#ifndef INC_2_CUSTOMER_H
+#define INC_2_CUSTOMER_H
+#include "Person.h"
 #include <string>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-class Customer{
+class Customer:public Person{
 private:
-    string name;
-    string address;
-    string email;
-public:
-    void SetName(string new_name);
-    void SetAddress(string new_address);
-    void SetEmail(string new_email);
-    string getName();
-    string getAddress();
-    string getEmail();
-    friend ostream& operator<<(ostream &os, const Customer& customer);
-    Customer();
-    Customer(string new_name);
-    Customer(string new_name, string new_address);
-    Customer(string new_name, string new_address, string new_email);
-    ~Customer();
-};
+    vector<string> roles;
 
+public:
+    void AddRole(const string& role);
+    void ShowRole()const;
+    Customer(const Customer& other);
+    Customer(const string& person_name, const string& person_address, const string& person_email);
+    ~Customer();
+
+};
 #endif
-//laba1
