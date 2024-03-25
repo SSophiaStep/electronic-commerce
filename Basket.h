@@ -1,20 +1,22 @@
-#ifndef INC_2_BASKET_H
-#define INC_2_BASKET_H
+#ifndef INC_2_BASKET_H_
+#define INC_2_BASKET_H_
+
 #include <iostream>
+#include "OnlineBasket.h"
 #include "Person.h"
 #include <vector>
 using namespace std;
-
-class Basket{
+class Basket : public OnlineBasket {
 private:
-    vector<string> items;
+    vector<Product> items;
     Person person;
+
 public:
-    void AddItem(const string& item);
-    void ShowItems();
-    Basket(const Basket& other);
+    void AddItem(const Product& product) override;
+    void RemoveItem(const string& item) override;
+    void ShowItems() override;
     Basket(const string& person_name, const string& person_address, const string& person_email);
-    ~Basket();
+    virtual ~Basket();
 };
 
-#endif//basket
+#endif
