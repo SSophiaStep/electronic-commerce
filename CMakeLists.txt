@@ -8,6 +8,11 @@ add_executable(2 main.cpp
         Product.cpp
         Customer.h
         Customer.cpp
-        Purchase.cpp
-        Purchase.h
+        Store.cpp
+        Store.h
+        Basket.h
+        Person.h
+        Person.cpp
+        OnlineBasket.h
+        Basket.cpp
 )
