@@ -15,4 +15,6 @@ add_executable(2 main.cpp
         Person.cpp
         OnlineBasket.h
         Basket.cpp
+        Admin.h
+        Admin.cpp
 )
