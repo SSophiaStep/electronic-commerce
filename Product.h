@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 class Product{
@@ -14,9 +15,11 @@ public:
     void SetItem(string new_item);
     void SetPrice(double new_price);
     void SetQuantity(int new_quantity);
-    string getItem();
+    string getItem() const;
     double getPrice() const;
     int getQuantity() const;
+    void saveToFile(const string& filename) const;
+    void loadFromFile(const string& filename);
 
     Product();
     Product(string new_item);
