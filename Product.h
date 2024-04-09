@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 class Product{
@@ -18,9 +19,6 @@ public:
     string getItem() const;
     double getPrice() const;
     int getQuantity() const;
-    void saveToFile(const string& filename) const;
-    void loadFromFile(const string& filename);
-
     Product();
     Product(string new_item);
     Product(string new_item,double new_price);
@@ -30,4 +28,4 @@ public:
 };
 
 
-#endif//oleg loh
+#endif
