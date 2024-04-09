@@ -9,7 +9,6 @@ private:
     string username;
     string password;
 public:
-    void displayCatalog(const Store& store);
     void setUsername(const string& uname);
     void setPassword(const string& pwd);
     string getUsername() const;
@@ -18,6 +17,8 @@ public:
     Admin(const string &uname);
     Admin(const string &uname, const string &pwd);
     ~Admin();
+
+    void displayCatalog(const Store &store);
 };
 
 #endif
