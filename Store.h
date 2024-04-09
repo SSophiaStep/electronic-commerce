@@ -11,14 +11,9 @@ private:
 public:
     Store(string newStoreName = "Unknown", vector<Product> newStore = {});
     ~Store();
-
     void setStore(Product store);
-
-    void showCatalog();
+    void updateCatalog(const string& filename);
+    void showCatalog()const;
 
 };
-
-
-
-
 #endif//laba2
